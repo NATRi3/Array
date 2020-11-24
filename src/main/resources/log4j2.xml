@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <Property name="APP_LOG_ROOT">/test/log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="{%date{DEFAULT}
+                [%t] %-5level %logger{5} - %msg\n"/>
+        </Console>
+        <RollingFile name="XML_ROLLING_FILE_APPENDER"
+                     fileName="${APP_LOG_ROOT}/appName.log"
+                     filePattern="${APP_LOG_ROOT}/appName-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{DEFAULT} [%t] %-5level %logger{5} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10KB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="error">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+        <Logger name="com.compName.projectName" level="debug">
+            <AppenderRef ref="XML_ROLLING_FILE_APPENDER"/>
+        </Logger>
+    </Loggers>
+</Configuration>
