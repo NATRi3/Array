@@ -7,6 +7,6 @@ public class App {
     public static Logger logger = LogManager.getLogger(App.class);
 
     public static void main(String[] args) {
-        logger.info("LOL");
+
     }
 }

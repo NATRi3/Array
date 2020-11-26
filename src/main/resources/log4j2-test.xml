@@ -1,4 +1,6 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
+
 <Configuration status="INFO">
     <Properties>
         <Property name="APP_LOG_ROOT">/test/log</Property>
@@ -25,4 +27,5 @@
             <AppenderRef ref="XML_ROLLING_FILE_APPENDER"/>
         </Logger>
     </Loggers>
+
 </Configuration>

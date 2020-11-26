@@ -1,13 +1,20 @@
 package edu.epam.day4.task.array;
 
-import java.sql.Array;
 import java.util.Arrays;
 
 public class NumberArray{
     private int length;
     private int[] array;
 
-    public int[] getNumberArray() {
+    public NumberArray(int[] array) {
+        this.array = array;
+    }
+
+    public NumberArray() {
+        this.length=0;
+    }
+
+    public int[] getArray() {
         return array;
     }
 
@@ -24,7 +31,9 @@ public class NumberArray{
         length++;
     }
 
-
+    public int get(int i){
+        return array[i];
+    }
 
     public int length() {
         return length;
@@ -52,7 +61,7 @@ public class NumberArray{
             return false;
         }
         for (int i = 0; i<length; i++){
-            if(array.getNumberArray()[i]!=this.getNumberArray()[i]){
+            if(array.getArray()[i]!=this.getArray()[i]){
                 return false;
             }
         }
