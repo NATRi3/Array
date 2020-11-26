@@ -1,9 +1,8 @@
-package edu.epam.day4.task.array;
+package edu.epam.task.array;
 
 import java.util.Arrays;
 
 public class NumberArray{
-    private int length;
     private int[] array;
 
     public NumberArray(int[] array) {
@@ -11,11 +10,24 @@ public class NumberArray{
     }
 
     public NumberArray() {
-        this.length=0;
+        array = new int[50];
+    }
+    public NumberArray(int size){
+        array = new int[size];
     }
 
-    public int[] getArray() {
-        return array;
+    public NumberArray(NumberArray numberArray) {
+        this.array = numberArray.getArray();
+    }
+
+    public int[] getArray(){
+        int[] result = new int[array.length];
+        int i=0;
+        for(int a:array){
+            result[i]=a;
+            i++;
+        }
+        return result;
     }
 
     public void setNumberArray(int[] array) {
@@ -27,21 +39,20 @@ public class NumberArray{
     }
 
     public void add(int a){
-        array[length+1]= a;
-        length++;
+        array[array.length]= a;
     }
 
     public int get(int i){
         return array[i];
     }
 
-    public int length() {
-        return length;
+    public int size() {
+        return array.length;
     }
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder().append("length=").append(length)
+        StringBuilder result = new StringBuilder().append("length=").append(size())
                 .append(", array=").append(Arrays.toString(array));
         return String.valueOf(result);
     }
@@ -57,11 +68,11 @@ public class NumberArray{
         }
 
         NumberArray array = (NumberArray) obj;
-        if (array.length()!=this.length()){
+        if (array.size()!=this.size()){
             return false;
         }
-        for (int i = 0; i<length; i++){
-            if(array.getArray()[i]!=this.getArray()[i]){
+        for (int i = 0; i<size(); i++){
+            if(array.getNumber(i)!=this.getNumber(i)){
                 return false;
             }
         }
@@ -71,8 +82,8 @@ public class NumberArray{
     @Override
     public int hashCode() {
         int hash = 31;
-        int result = length * 31;
-        for(int i = 0; i<length; i++) {
+        int result = size() * 31;
+        for(int i = 0; i<size(); i++) {
             result += array[i]*31;
         }
         return result;

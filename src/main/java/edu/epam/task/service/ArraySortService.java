@@ -1,6 +1,6 @@
-package edu.epam.day4.task.service;
+package edu.epam.task.service;
 
-import edu.epam.day4.task.array.NumberArray;
+import edu.epam.task.array.NumberArray;
 
 public class ArraySortService {
     public void bubbleSortArray(int[] array){
@@ -19,24 +19,25 @@ public class ArraySortService {
     }
 
     public void selectionSortArray(NumberArray arr){
-        for (int i = 0; i < arr.length(); i++) {
+        for (int i = 0; i < arr.size(); i++) {
             int min = arr.get(i);
-            int min_i = i;
-            for (int j = i+1; j < arr.length(); j++) {
+            int minIndex = i;
+            for (int j = i+1; j < arr.size(); j++) {
                 if (arr.get(j) < min) {
                     min = arr.get(j);
-                    min_i = j;
+                    minIndex = j;
                 }
             }
-            if (i != min_i) {
+            if (i != minIndex) {
                 int tmp = arr.get(i);
-                arr.getArray()[i] = arr.getArray()[min_i];
-                arr.getArray()[min_i] = tmp;
+                arr.getArray()[i] = arr.getArray()[minIndex];
+                arr.getArray()[minIndex] = tmp;
             }
         }
     }
+
     public void quickSort(NumberArray numArray){
-        quickSortFromTo(numArray.getArray(),0,numArray.length());
+        quickSortFromTo(numArray.getArray(),0,numArray.size());
     }
 
     private void quickSortFromTo(int[] numArray, int leftBorder, int rightBorder) {
@@ -50,7 +51,6 @@ public class ArraySortService {
             while (numArray[rightMarker] > pivot) {
                 rightMarker--;
             }
-
             if (leftMarker <= rightMarker) {
                 if (leftMarker < rightMarker) {
                     int tmp = numArray[leftMarker];

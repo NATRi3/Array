@@ -1,11 +1,9 @@
-package edu.epam.day4.task.service;
+package edu.epam.task.service;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import java.util.Arrays;
 
 public class JaggedArraySortServiceTest {
 
@@ -32,7 +30,7 @@ public class JaggedArraySortServiceTest {
 
     @Test
     public void testSumJaggedArraySort() {
-        new JaggedArraySortService().jaggedArraySort(objArray,TypeSort.sum);
+        new JaggedArraySortService().jaggedArraySort(objArray,TypeSort.SUM);
         for(int[]j:objArray) {
             for(int i: j) {
                 System.out.print(i+",");
@@ -43,7 +41,7 @@ public class JaggedArraySortServiceTest {
     }
     @Test
     public void testMinJaggedArraySort() {
-        new JaggedArraySortService().jaggedArraySort(objArray,TypeSort.min);
+        new JaggedArraySortService().jaggedArraySort(objArray,TypeSort.MIN);
         for(int[]j:objArray) {
             for(int i: j) {
                 System.out.print(i+",");
@@ -54,7 +52,7 @@ public class JaggedArraySortServiceTest {
     }
     @Test
     public void testMaxJaggedArraySort() {
-        new JaggedArraySortService().jaggedArraySort(objArray,TypeSort.max);
+        new JaggedArraySortService().jaggedArraySort(objArray,TypeSort.MAX);
         for(int[]j:objArray) {
             for(int i: j) {
                 System.out.print(i+",");

@@ -1,12 +1,10 @@
-package edu.epam.day4.task.service;
+package edu.epam.task.service;
 
-import edu.epam.day4.task.array.NumberArray;
+import edu.epam.task.array.NumberArray;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class ArraySortServiceTest {
     public static int[] actual;
