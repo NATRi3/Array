@@ -46,14 +46,14 @@ public class ArrayCreatorService {
                         result.add(intA);
                     }
                 } catch (FileNotFoundException e1) {
-                //    logger.error(e.getMessage());
+                    logger.error(e.getMessage());
                 }
                 catch (IOException e1){
-                 //   logger.error(e.getMessage());
+                   logger.error(e.getMessage());
                 }
             }
             catch (IOException e){
-                //logger.error(e.getMessage());
+                logger.error(e.getMessage());
             }
             return result;
     }
